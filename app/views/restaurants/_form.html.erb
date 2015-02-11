@@ -1,0 +1,35 @@
+<h1>Add a New Restaurant</h1>
+
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br/>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :open_time %><br/>
+    <%= f.text_field :open_time %>
+  </div>
+  <div class="field">
+    <%= f.label :close_time %><br/>
+    <%= f.password_field :close_time %>
+  </div>
+  <div class="field">
+    <%= f.label :capacity %><br/>
+    <%= f.password_field :capacity %>
+  </div>
+  <div class="actions"><%= f.submit %></div>
+<% end %>
+
+<p>Find me in app/views/restaurants/new.html.erb</p>
