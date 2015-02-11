@@ -1,2 +1,26 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%= @restaurant.name %></title>
+</head>
+<body>
+<table><tr><td>
+<p><h1><%= @restaurant.name %></h1><br>
+
+Open Time<br>
+
+<%= @restaurant.open_time %><br>
+
+Closing Time<br>
+<%= @restaurant.close_time %><br>
+<p>Make a reservation</p>
+
+	</td></tr></table>
+</body>
+</html>
+
+
+
+
+
