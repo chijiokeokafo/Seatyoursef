@@ -1,2 +1,13 @@
 <h1>WELCOME TO SEAT-YOURSELF!</h1>
 
+<%= link_to "Add a Restaurant", "/restaurants/new" %>
+
+<ul>
+	<% @restaurants.each do |r| %>
+	<li><%= link_to(r) do %>
+  			<p><%= r.name %></p>			
+		<% end %>
+ 	<% end%>
+ 	</li>
+
+</ul>
