@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  open_time: 1
+  close_time: 1
+  capacity: 1
+
+two:
+  name: MyString
+  open_time: 1
+  close_time: 1
+  capacity: 1
