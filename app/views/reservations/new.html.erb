@@ -3,13 +3,8 @@
 <%= form_for @reservation do |f| %>
 
   <div class="field">
-    <%= f.label :month %><br/>
-    <%= f.text_field :month %>
-  </div>
-
-	<div class="field">
-    <%= f.label :day %><br/>
-    <%= f.text_field :day %>
+    <%= f.label :date %><br/>
+    <%= f.datetime_select :date, discard_minute: true %>
   </div>
 
 	<div class="field">
