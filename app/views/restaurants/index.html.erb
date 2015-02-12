@@ -1,6 +1,8 @@
 <h1>WELCOME TO SEAT-YOURSELF!</h1>
 
-<%= link_to "Add a Restaurant", "/restaurants/new" %>
+<% if current_user %>
+  <%= link_to "Add a Restaurant", "/restaurants/new" %>
+<% end %>
 
 <ul>
 	<% @restaurants.each do |r| %>
