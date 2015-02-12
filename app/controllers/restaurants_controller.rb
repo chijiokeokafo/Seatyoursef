@@ -15,15 +15,6 @@ class RestaurantsController < ApplicationController
 
   def create
   	@restaurant = Restaurant.new(restaurant_params)
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-  	@restaurant = Restaurant.new(restaurant_params)
-
-  	@restaurant = Restaurant.new(restuarant_params)
-
-=======
->>>>>>> fc970c8b283297a785f967fc66f095adc4ef69de
 
   	if @restaurant.save
   		redirect_to restaurants_url
