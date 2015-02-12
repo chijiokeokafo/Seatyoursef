@@ -6,11 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-<<<<<<< HEAD
-      redirect_to restaurants_url, notice: "Signed up!"
-=======
       redirect_to products_url, notice: "Signed up!"
->>>>>>> fba74e6c35da950325e0d03bc3ff64c5ee9227df
     else
       render "new"
     end
