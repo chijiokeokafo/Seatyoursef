@@ -12,8 +12,13 @@ class RestaurantsController < ApplicationController
       # if current_user
       # @reservation = @restaurant.reservations.build
   end
+
   def create
+<<<<<<< HEAD
   	@restaurant = Restaurant.new(restaurant_params)
+=======
+  	@restaurant = Restaurant.new(restuarant_params)
+>>>>>>> 6c97af66c1f39627fc6dcf9af2af8bbeec6eae65
 
   	if @restaurant.save
   		redirect_to restaurants_url
