@@ -1,2 +1,31 @@
-<h1>Reservations#new</h1>
-<p>Find me in app/views/reservations/new.html.erb</p>
+<h1>Make a Reservation</h1>
+
+<!-- if user is logged in collect:
+user_id
+resturant_id -->
+< form_for @reservation %>
+<p>from the user:</p>
+
+  <div class="field">
+    <%= f.label :firstname %><br/>
+    <%= f.text_field :firstname %>
+  </div>
+
+    <div class="field">
+    <%= f.label :lastname %><br/>
+    <%= f.text_field :lastname %>
+  </div>
+
+
+date 
+time
+number of people
+</div></p>
+ <div class="actions">
+ <%= f.submit %></p>
+ </div>
+
+  <% end %>
+
+
+

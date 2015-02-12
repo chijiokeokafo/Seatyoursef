@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+
 	<title><%= @restaurant.name %></title>
 </head>
 <body>
@@ -10,11 +11,23 @@
 Capacity <%= @restaurant.capacity%><br>
 Opening Hours 6pm - 11pm
 
+<% if current_user %>
+  <h3><%= link_to "Make a Reservation", new_reservation_path %></h3>
+	
+	<% else %>
+  	<p>Please sign up or log in to make a reservation.</p> 
 
-<p><h3>Make a Reservation</h3></p>  
+
 </td></tr></table>   
 </body>
 </html>
+
+<% end %>
+
+
+
+
+
 
 
 
