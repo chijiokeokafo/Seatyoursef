@@ -2,12 +2,10 @@
 
 <%= link_to "Add a Restaurant", "/restaurants/new" %>
 
-<ul>
-	<% @restaurants.each do |r| %>
-	<li><%= link_to(r) do %>
-  			<p><%= r.name %></p>			
-		<% end %>
- 	</li>
 
-</ul>
+	<% @restaurants.each do |r| %>
+	<%= link_to(r) do %>
+  			<li><%= r.name %></li>			
+		<% end %>
+
 <% end %>
