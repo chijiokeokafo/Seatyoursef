@@ -2,8 +2,10 @@
 	<tr>
 		<td>
 			<h1><%= @restaurant.name %></h1><br>
-		   <%= link_to_if current_user == @restaurant.user, "| Edit ", edit_restaurant_path(@restaurant) %> 
-		   <%= link_to_if current_user == @restaurant.user, "| Delete |", restaurant_path(@restaurant), method: :delete %><br>
+			<% if current_user == @restaurant.user %>
+			   <%= link_to "| Edit ", edit_restaurant_path(@restaurant) %> 
+			   <%= link_to "| Delete |", restaurant_path(@restaurant), method: :delete %><br>
+		  <% end %>
 
 			Capacity <%= @restaurant.capacity%><br>
 			Opening Hours 6pm - 11pm
