@@ -1,28 +1,33 @@
-class UsersController < ApplicationController
-<<<<<<< HEAD
-	def new
-		@user = User.new
-	end
+class RestaurantsController < ApplicationController
+  def index
+    @restaurants = Restaurant.all
+  end
 
-	def create
-		@user = User.new(user_params)
-		if @user.save
-			redirect_to restaurants_url, notice: "Signed up"
-		else
-			render "new"
-		end
-	end
+  def show
+    @restaurant = Restaurant.find(params[:id])
+  end
 
-	private
-  def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
-end
-=======
   def new
-  	
+    @restaurant = Restaurant.new
+      # if current_user
+      # @reservation = @restaurant.reservations.build
   end
 
   def create
+    @restaurant = Restaurant.new(restaurant_params)
+
+    if @restaurant.save
+      redirect_to restaurants_url
+    else
+      render :new
+    end 
   end
->>>>>>> 7009a47373d59190d5a149f09e6b64285ea56aff
+
+  private
+  def restaurant_params
+    params.require(:restaurant).permit(:name, :open_time, :close_time, :capacity)
+  end   
+  
+
+ 
 end
