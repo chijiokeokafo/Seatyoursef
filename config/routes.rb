@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'reservations/new'
+
+  get 'reservations/create'
+
+  get 'reservations/delete'
+
+  get 'reservations/edit'
+
   # get 'sessions/new'
 
   # get 'sessions/create'
