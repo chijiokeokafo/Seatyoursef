@@ -9,21 +9,19 @@
 </head>
 <body>
 
-<header>
-  <div class="logo">
-    <img src="/assets/noun_63079_cc.png" alt="">
-  </div>
-</header>
+  <header>
+    <img class="logo" src="/assets/noun_63079_cc.png" alt="">
+  </header>
 
-<p class="userinfo">
+  <p class="userinfo">
     <% if current_user %>
-        Signed in as <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
-      <% else %>
-		<%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
+    Signed in as <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
+    <% else %>
+    <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
     <% end %>
-</p>
+  </p>
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>
