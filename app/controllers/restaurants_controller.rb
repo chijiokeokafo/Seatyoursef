@@ -8,6 +8,7 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
     @reservation = Reservation.new
+    
   end
 
   def new
@@ -35,7 +36,7 @@ class RestaurantsController < ApplicationController
     @restaurant.user = current_user
 
   	if @restaurant.save
-  		redirect_to restaurants_url
+  		redirect_to 'reservations/show'
   	else
   		render :new
   	end	
