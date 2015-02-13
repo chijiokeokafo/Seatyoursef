@@ -1,24 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'reservations/new'
+  resources :restaurants do
+    resources :reservations, only: [:show, :create, :destroy]
+  end
 
-  get 'reservations/create'
-
-  get 'reservations/delete'
-
-  get 'reservations/edit'
-
-  # get 'sessions/new'
-
-  # get 'sessions/create'
-
-  # get 'sessions/destroy'
-
-  # get 'users/new'
-
-  # get 'users/create'
-  resources :restaurants
-  resources :reservations
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
 

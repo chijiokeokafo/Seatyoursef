@@ -1,10 +1,14 @@
-<h1>restaurant name</h1>
+<h1> restaurant name</h1>
 
 <%= form_for @reservation do |f| %>
+
+<p>
+  <div class="field">
 
   <div class="field">
     <%= f.label :date %><br/>
     <%= f.datetime_select :date, discard_minute: true %>
+
   </div>
 
 	<p><div class="field">
@@ -19,22 +23,3 @@
 <% end %>
 
 
-
-<!-- Make a Reservation
-
-First Name
-Auto fill first name
-Last Name
-Auto fill last name
-
-Date
-Month
-Day
-
-
-Time of reservation (on the hour)
-
-Number of people
-
-submit button
- -->

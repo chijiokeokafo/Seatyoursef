@@ -11,8 +11,24 @@
 			Opening Hours 6pm - 11pm
 
 			<% if current_user %>
-			 	<h3><%= link_to "Make a Reservation", new_reservation_path %></h3>
-			<% else %>
+			 	<h3>"Make a Reservation"</h3>
+				
+				<%= form_for ([@restaurant, @reservation]) do |f| %>
+				<p><div class="field">
+    				<%= f.label :date %><br/>
+    				<%= f.datetime_select :date, discard_minute: true %>
+    				</div>
+
+				<p><div class="field">
+    		<%= f.label :party_size %><br/>
+    		<%= f.text_field :party_size %>
+  			</div></p>
+
+  			<div class="actions">
+	  		<%= f.submit %></p>
+  			</div>
+				<% end %>
+		<% else %>
 				<p>Please sign up or log in to make a reservation.</p> 
 			<% end %>
 		</td>
