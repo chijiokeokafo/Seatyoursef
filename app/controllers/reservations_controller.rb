@@ -14,7 +14,7 @@ class ReservationsController < ApplicationController
   	@reservation = @restaurant.reservations.build(reservation_params)
     @reservation.user = current_user
     if @reservation.save
-      redirect_to restaurants_path, notice: 'Thank you!'
+      redirect_to restaurant_reservation_path(@restaurant, @reservation), notice: 'Thank you!'
     else
       render 'restaurants/show'
     end
