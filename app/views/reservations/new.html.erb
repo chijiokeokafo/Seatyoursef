@@ -1,31 +1,45 @@
-<h1>Make a Reservation</h1>
+<h1>restaurant name</h1>
 
-<!-- if user is logged in collect:
-user_id
-resturant_id -->
-< form_for @reservation %>
-<p>from the user:</p>
+<%= form_for @reservation do |f| %>
 
   <div class="field">
-    <%= f.label :firstname %><br/>
-    <%= f.text_field :firstname %>
+    <%= f.label :month %><br/>
+    <%= f.text_field :month %>
   </div>
 
-    <div class="field">
-    <%= f.label :lastname %><br/>
-    <%= f.text_field :lastname %>
+	<div class="field">
+    <%= f.label :day %><br/>
+    <%= f.text_field :day %>
   </div>
 
+	<div class="field">
+    <%= f.label :party_size %><br/>
+    <%= f.text_field :party_size %>
+  </div>
 
-date 
-time
-number of people
-</div></p>
- <div class="actions">
- <%= f.submit %></p>
- </div>
+  <div class="actions">
+	  <%= f.submit %></p>
+  </div>
 
-  <% end %>
+<% end %>
 
 
 
+<!-- Make a Reservation
+
+First Name
+Auto fill first name
+Last Name
+Auto fill last name
+
+Date
+Month
+Day
+
+
+Time of reservation (on the hour)
+
+Number of people
+
+submit button
+ -->

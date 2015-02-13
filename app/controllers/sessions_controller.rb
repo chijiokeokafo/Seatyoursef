@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_filter :insure_login, except: [:new, :create]
+
   def new
   end
 

@@ -1,38 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
+<table>
+	<tr>
+		<td>
+			<h1><%= @restaurant.name %></h1><br>
+			<% if current_user == @restaurant.user %>
+			   <%= link_to "| Edit ", edit_restaurant_path(@restaurant) %> 
+			   <%= link_to "| Delete |", restaurant_path(@restaurant), method: :delete %><br>
+		  <% end %>
 
-	<title><%= @restaurant.name %></title>
-</head>
-<body>
-<table><tr><td>
-<p><h1><%= @restaurant.name %></h1><br>
-       <%= link_to_if current_user==@restaurant.user, "| Edit ", edit_restaurant_path(@restaurant) %> 
-       <%= link_to_if current_user==@restaurant.user, "| Delete |", restaurant_path(@restaurant) ,method: :delete %><br>
+			Capacity <%= @restaurant.capacity%><br>
+			Opening Hours 6pm - 11pm
 
-Capacity <%= @restaurant.capacity%><br>
-Opening Hours 6pm - 11pm
-
-<% if current_user %>
-  <h3><%= link_to "Make a Reservation", new_reservation_path %></h3>
-	
-	<% else %>
-  	<p>Please sign up or log in to make a reservation.</p> 
-
-
-</td></tr></table>   
-</body>
-</html>
-
-<% end %>
-
-
-
-
-
-
-
-
-
-
+			<% if current_user %>
+			 	<h3><%= link_to "Make a Reservation", new_reservation_path %></h3>
+			<% else %>
+				<p>Please sign up or log in to make a reservation.</p> 
+			<% end %>
+		</td>
+	</tr>
+</table>	

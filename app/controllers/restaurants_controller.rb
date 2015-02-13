@@ -1,4 +1,6 @@
 class RestaurantsController < ApplicationController
+  # before_filter :insure_login, except: [:index, :show]
+
   def index
   	@restaurants = Restaurant.all
   end
