@@ -12,7 +12,7 @@ class RestaurantsController < ApplicationController
   def new
   	@restaurant = Restaurant.new
       # if current_user
-      # @reservation = @restaurant.reservations.build
+      #   @reservation = @restaurant.reservations.build
   end
 
   def edit
