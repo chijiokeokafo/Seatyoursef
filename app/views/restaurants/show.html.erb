@@ -19,6 +19,11 @@
     				<%= f.datetime_select :date, discard_minute: true %>
     				</div>
 
+            <div class="field">
+            <%= f.label :reservation_time %><br/>
+            <%= f.text_field :reservation_time %>
+            </div>
+
 				<p><div class="field">
     		<%= f.label :party_size %><br/>
     		<%= f.text_field :party_size %>
