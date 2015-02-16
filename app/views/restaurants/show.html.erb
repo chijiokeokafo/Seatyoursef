@@ -24,14 +24,14 @@
             <%= f.text_field :reservation_time %>
             </div>
 
-				<p><div class="field">
-    		<%= f.label :party_size %><br/>
-    		<%= f.text_field :party_size %>
-  			</div></p>
+    				<div class="field">
+        		<%= f.label :party_size %><br/>
+        		<%= f.text_field :party_size %>
+      			</div>
 
-  			<div class="actions">
-			  <%= f.submit class: "btn btn-submit"%>      
-  			</div>
+      			<div class="actions">
+    			  <%= f.submit class: "btn btn-submit"%>      
+      			</div></p>
 				<% end %>
 		<% else %>
 				<p>Please sign up or log in to make a reservation.</p> 
