@@ -1,11 +1,11 @@
 <h1>Thank you for your reservation!</h1>
 
-<!-- reservation_controller - show method -->
-<p>user name<br>
-restaurant name<br>
-reservation date and time<br>
+
+ <p> Restaurant: <%=  @reservation.restaurant.name %><br>
+    Reservation Number: <%= @reservation.user_id %><br> 
+    Party Size: <%= @reservation.party_size %><br> 
+    Reservation Date and Time: <%= @reservation.reservation_time %><br> 
+                                 </p>
 
 
-<%= link_to 'Check out more restaurants?', restaurants_url  %> 
-
- </p> 
+<%= link_to "Check out more restaurants?", restaurants_url  %> 
