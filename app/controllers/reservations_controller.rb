@@ -4,11 +4,8 @@ class ReservationsController < ApplicationController
   	@reservation = Reservation.new
   end
 
-
-
   def show    
   	@reservation = Reservation.find(params[:id])
-    @reservations  = Reservation.all
   end
 
 
