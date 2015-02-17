@@ -4,12 +4,18 @@
 <%= link_to "Check All your reservations?", restaurant_reservation_url  %> 
 <!-- THIS LINK NEEDS TO BE UPDATED TO Reservation Page -->
 
+<h2>Reservations</h2>
 
- <p> Restaurant: <%=  @reservation.restaurant.name %><br>
-    Reservation Number: <%= @reservation.user_id %><br> 
-    Party Size: <%= @reservation.party_size %><br> 
-    Reservation Date and Time: <%= @reservation.reservation_time %><br> 
-                                 </p>
+  <div>
+    <p> Restaurant: <%=  @reservation.restaurant.name %><br>
+        Reservation Number: <%= @reservation.user_id %><br> 
+        Party Size: <%= @reservation.party_size %><br> 
+        Reservation Date and Time: <%= @reservation.reservation_time %><br> 
+    </p>
+  <div>
+  <div>
+    <%= link_to "Check out more restaurants?", restaurants_url  %> 
+  <div>
 
- 
-<%= link_to "Check out more restaurants?", restaurants_url  %> 
+
+  
