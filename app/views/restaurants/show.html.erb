@@ -21,11 +21,7 @@
 				<h3>Make a Reservation</h3>
 			
 				<%= form_for ([@restaurant, @reservation]) do |f| %>
-					<% if @reservation.errors.any? %>
-						<div id="error_explanation">
-							<h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
-						</div>
-					<% end %>
+				
 
 					<div class="field">
 						<%= f.label :reservation_time %><br/>
