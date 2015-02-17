@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  # before_filter :insure_login, except: [:index, :show]
+  before_filter :insure_login, except: [:index, :show]
 
   def index
   	@restaurants = Restaurant.all
@@ -7,7 +7,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
-    @reservation = Reservation.new 
+    @reservation = Reservation.new
   end
 
   def new
@@ -36,6 +36,7 @@ class RestaurantsController < ApplicationController
 
   	if @restaurant.save
   		redirect_to 'reservations/show'
+
   	else
   		render :new
   	end	
@@ -51,7 +52,6 @@ class RestaurantsController < ApplicationController
 
   private
   def restaurant_params
-  	params.require(:restaurant).permit(:name, :capacity)
+  	params.require(:restaurant).permit(:name, :capacity, :open_time, :close_time, :phone_number, :address, :description)
   end 	
 end
-
