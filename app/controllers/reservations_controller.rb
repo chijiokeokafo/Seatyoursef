@@ -6,7 +6,10 @@ class ReservationsController < ApplicationController
   end
 
   def show    
-  	@reservation = Reservation.find(params[:id])
+    @restaurant = Restaurant.find(params[:restaurant_id])
+  	@reservation = Reservation.find(params[:restaurant_id])
+
+
   end
 
 

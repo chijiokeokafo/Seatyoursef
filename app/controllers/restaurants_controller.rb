@@ -36,6 +36,7 @@ class RestaurantsController < ApplicationController
 
   	if @restaurant.save
   		redirect_to 'reservations/show'
+
   	else
   		render :new
   	end	
@@ -51,7 +52,6 @@ class RestaurantsController < ApplicationController
 
   private
   def restaurant_params
-  	params.require(:restaurant).permit(:name, :reservation_time, :capacity)
+  	params.require(:restaurant).permit(:name, :capacity, :open_time, :close_time, :phone_number, :address, :description)
   end 	
 end
-
