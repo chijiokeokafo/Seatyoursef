@@ -1,11 +1,19 @@
-<h1>Thank you for your reservation!</h1>
+<h1>Reservation made!</h1>
 
 <!-- reservation_controller - show method -->
-<p>user name<br>
-restaurant name<br>
-reservation date and time<br>
+
+<h3><%= @restaurant.name %><br></h3>
+<%= @reservation.date.strftime("%A %B %d at %-I %p")  %>
+<p> Number of people: <%= @reservation.party_size %></p>
+<p></p>
 
 
-<%= link_to 'Check out more restaurants?', restaurants_url  %> 
+<h4> Upcoming Reservations </h4>
+<p><% if current_user == @restaurant.user %>
+list of all reservations made by user
+<% end %>
+</p> 
 
- </p> 
+<p>
+<%= link_to 'Check out more restaurants!', restaurants_url  %> 
+</p> 

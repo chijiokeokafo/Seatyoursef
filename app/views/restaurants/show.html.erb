@@ -1,36 +1,47 @@
-<table>
-	<tr>
-		<td>
-			<h1><%= @restaurant.name %></h1><br>
 			<% if current_user == @restaurant.user %>
-			   <%= link_to "| Edit ", edit_restaurant_path(@restaurant) %> 
-			   <%= link_to "| Delete |", restaurant_path(@restaurant), method: :delete %><br>
-		  <% end %>
+			<p>Make a change to your restaurant listing
+				<%= link_to "| Edit ", edit_restaurant_path(@restaurant) %> 
+				<%= link_to "| Delete |", restaurant_path(@restaurant), method: :delete %>			<% end %>
 
-			Capacity <%= @restaurant.capacity%><br>
-			Opening Hours 6pm - 11pm
+				<table>
+					<tr>
+						<td>
+							<h1><%= @restaurant.name %></h1>
 
-			<% if current_user %>
-			 	<h3>"Make a Reservation"</h3>
-				
-				<%= form_for ([@restaurant, @reservation]) do |f| %>
-				<p><div class="field">
-    				<%= f.label :date %><br/>
-    				<%= f.datetime_select :date, discard_minute: true %>
-    				</div>
+							<% if current_user %>
+							<h3>Make a Reservation</h3>
+							
+							<%= form_for ([@restaurant, @reservation]) do |f| %>
+							<% if @reservation.errors.any? %>
+							<div id="error_explanation">
+								<h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
 
-				<p><div class="field">
-    		<%= f.label :party_size %><br/>
-    		<%= f.text_field :party_size %>
-  			</div></p>
+								<ul>
+									<% @review.errors.full_messages.each do |msg| %>
+									<li><%= msg %></li>
+									<% end %>
+								</ul>
+							</div>
+							<% end %>
 
-  			<div class="actions">
-			  <%= f.submit class: "btn btn-submit"%>      
-  			</div>
-				<% end %>
-		<% else %>
-				<p>Please sign up or log in to make a reservation.</p> 
-			<% end %>
-		</td>
-	</tr>
-</table>	
+							<p><div class="field">
+								<%= f.label :date %><br/>
+								<%= f.datetime_select :date, discard_minute: true %>
+							</div>
+
+							<p><div class="field">
+								<%= f.label :party_size %><br/>
+								<%= f.text_field :party_size, :size=>"4" %>
+							</div></p>
+
+							<div class="actions">
+								<%= f.submit class: "btn btn-submit"%>      
+							</div>
+							<% end %>
+							<% else %>
+							<p>Please sign up or log in to make a reservation.</p> 
+							<p>Back</p>
+
+						</td>
+					</tr>
+				</table><% end %>
