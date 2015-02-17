@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :reservations, only: [:show, :create, :destroy]
   end
 
+  resources :reservations
+
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
 

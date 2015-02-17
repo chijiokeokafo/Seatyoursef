@@ -1,31 +1,13 @@
-<h1>Reservation made!</h1>
-
-<!-- reservation_controller - show method -->
-
-<h3><%= @restaurant.name %><br></h3>
-<%= @reservation.date.strftime("%A %B %d at %-I %p")  %>
-<p> Number of people: <%= @reservation.party_size %></p>
-<p></p>
-
-
-<h4> Upcoming Reservations </h4>
-<p><% if current_user == @restaurant.user %>
-list of all reservations made by user
-<% end %>
-</p> 
-
-<p>
-<%= link_to 'Check out more restaurants!', restaurants_url  %> 
-</p> 
+<h1>Thank you for your reservation!</h1>
 
 <%= link_to "Check All your reservations?", restaurant_reservation_url  %> 
 <!-- THIS LINK NEEDS TO BE UPDATED TO Reservation Page -->
 
+<p>
+  Restaurant: <%=  @reservation.restaurant.name %><br>
+  Reservation Number: <%= @reservation.user_id %><br> 
+  Party Size: <%= @reservation.party_size %><br> 
+  Reservation Date and Time: <%= @reservation.reservation_time %><br> 
+</p>
 
- <p> Restaurant: <%=  @reservation.restaurant.name %><br>
-    Reservation Number: <%= @reservation.user_id %><br> 
-    Party Size: <%= @reservation.party_size %><br> 
-    Reservation Date and Time: <%= @reservation.reservation_time %><br> 
-                                 </p>
-
-  
+<%= link_to "Check out more restaurants?", restaurants_url  %> 

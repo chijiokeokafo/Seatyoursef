@@ -29,14 +29,12 @@ class RestaurantsController < ApplicationController
     end
   end
 
-
   def create
   	@restaurant = Restaurant.new(restaurant_params)
     @restaurant.user = current_user
 
   	if @restaurant.save
-  		redirect_to 'reservations/show'
-
+  		redirect_to restaurants_path
   	else
   		render :new
   	end	
@@ -45,9 +43,9 @@ class RestaurantsController < ApplicationController
   def destroy
     @restaurant = Restaurant.find(params[:id])
     if current_user == @restaurant.user
-         @restaurant.destroy
-         redirect_to restaurants_path
-      end
+      @restaurant.destroy
+      redirect_to restaurants_path
+    end
   end
 
   private
