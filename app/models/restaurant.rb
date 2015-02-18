@@ -7,9 +7,8 @@ class Restaurant < ActiveRecord::Base
 	has_many :users, through: :reservations
   belongs_to :user
 
-    def available?(party_size, reservation_time)
+  def available?(party_size, reservation_time)
 		total_reservation_count = reservations.where(reservation_time: reservation_time).sum(:party_size)
 		party_size + total_reservation_count <= capacity
 	end
- end
-
+end

@@ -13,7 +13,8 @@ class ReservationsController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
   	@reservation = @restaurant.reservations.build(reservation_params)
     @reservation.user = current_user
-      if @reservation.save
+    
+    if @reservation.save
       redirect_to restaurant_reservation_path(@restaurant, @reservation), notice: 'Thank you!'
     else
       flash[:alert] = @reservation.errors.full_messages.to_sentence

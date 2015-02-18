@@ -8,7 +8,7 @@ class Reservation < ActiveRecord::Base
 	private
 	def availability
 		if !restaurant.available?(party_size, reservation_time)
-		errors.add(:base, "restaurant isn't abailable for a booking, sorry!")
+			errors.add(:base, "restaurant isn't abailable for a booking, sorry!")
 		end
 	end
 end
